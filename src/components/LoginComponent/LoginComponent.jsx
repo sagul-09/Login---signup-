@@ -43,6 +43,8 @@ class LoginComponent extends Component {
         console.log(data);
         if (data.status === 'OK') {
           alert('login successful')
+          window.localStorage.setItem('token', data.token)
+          window.location.href='/userdata'
         }
       });
   };
