@@ -1,47 +1,39 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class SignUpComponent extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      firstName : "",
-      lastName : "",
-      email : "",
-      password : ""
-    }
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+    };
   }
 
-  firstNameHandler = event => {
-    this.setState(
-      {
-        firstName : event.target.value
-      }
-    )
-  }
-  lastNameHandler = event => {
-    this.setState(
-      {
-        lastName : event.target.value
-      }
-    )
-  }
-  emailHandler = event => {
-    this.setState(
-      {
-        email : event.target.value
-      }
-    )
-  }
-  passwordHandler = event => {
-    this.setState(
-      {
-        password : event.target.value
-      }
-    )
-  }
+  firstNameHandler = (event) => {
+    this.setState({
+      firstName: event.target.value,
+    });
+  };
+  lastNameHandler = (event) => {
+    this.setState({
+      lastName: event.target.value,
+    });
+  };
+  emailHandler = (event) => {
+    this.setState({
+      email: event.target.value,
+    });
+  };
+  passwordHandler = (event) => {
+    this.setState({
+      password: event.target.value,
+    });
+  };
 
-  formSubmitHandler = event => {
-    event.preventDefault()
+  formSubmitHandler = (event) => {
+    event.preventDefault();
     console.log(
       this.state.firstName,
       this.state.lastName,
@@ -60,19 +52,17 @@ class SignUpComponent extends Component {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
         email: this.state.email,
-        password: this.state.password
+        password: this.state.password,
       }),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
       });
-  }
-
- 
+  };
 
   render() {
-const { firstName, lastName, email, password } = this.state
+    const { firstName, lastName, email, password } = this.state;
 
     return (
       <form onSubmit={this.formSubmitHandler}>
@@ -138,4 +128,4 @@ const { firstName, lastName, email, password } = this.state
   }
 }
 
-export default SignUpComponent
+export default SignUpComponent;
