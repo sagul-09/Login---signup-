@@ -41,6 +41,9 @@ class LoginComponent extends Component {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        if (data.status === 'OK') {
+          alert('login successful')
+        }
       });
   };
 
@@ -81,7 +84,10 @@ class LoginComponent extends Component {
           </button>
         </div>
         <p className="forgot-password text-right">
-          New User? <a href="/signup">Sign up here</a>
+          forgot <a href="#">Password?</a>
+        </p>
+        <p className="forgot-password text-right">
+          New user? <a href="/signup">sign-up here?</a>
         </p>
       </form>
     );
